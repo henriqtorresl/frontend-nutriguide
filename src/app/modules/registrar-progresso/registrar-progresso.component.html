@@ -1,0 +1,64 @@
+<div class="container">
+
+    <div class="title">
+        <h3>Paciente: {{paciente.nome_usuario}}</h3>
+        <h1>Registrar Evolução</h1>
+    </div>
+
+    <form class="formulario" [formGroup]="this.formulario">
+
+        <section class="inputs">
+            <mat-form-field class="input-item" appearance="outline">
+                <mat-label>Peso</mat-label>
+                <input matInput type="number" placeholder="Em Kg" formControlName="peso">
+            </mat-form-field>
+
+            <mat-form-field class="input-item" appearance="outline">
+                <mat-label>Principal Objetivo/Queixa</mat-label>
+                <input matInput type="text" placeholder="Ex.: Emagrecimento" formControlName="queixa">
+            </mat-form-field>
+
+        </section>
+
+        <section class="text-area">
+            <mat-form-field class="text-area-item" appearance="outline">
+                <mat-label>Medidas Corporais</mat-label>
+                <textarea matInput name="" id="" cols="30" rows="10" formControlName="medidasCorporais"
+                placeholder="Ex.: Cintura - 70 cm, Abdômen - 85 cm, Quadril - 100 cm."></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="text-area-item" appearance="outline">
+                <mat-label>Hábitos Alimentares</mat-label>
+                <textarea matInput name="" id="" cols="30" rows="10" formControlName="habitosAlimentares"
+                placeholder="Ex.: Preferências a doces"></textarea>
+            </mat-form-field>
+
+        </section>
+
+        <section class="text-area">
+            <mat-form-field class="text-area-item" appearance="outline">
+                <mat-label>Nível de Atividade Física</mat-label>
+                <textarea matInput name="" id="" cols="30" rows="10" formControlName="atividade"
+                placeholder="Atividade e frequência por semana"></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="text-area-item" appearance="outline">
+                <mat-label>Suplementação Atual</mat-label>
+                <textarea matInput name="" id="" cols="30" rows="10" formControlName="suplementacao"
+                placeholder="Qual suplementação o paciente está tomando"></textarea>
+            </mat-form-field>
+        </section>
+
+        <div class="botoes">
+            <div class="botao-cancelar">
+                <button (click)="cancelar()">Cancelar</button>
+            </div>
+            
+            <div class="botao-registrar">
+                <button (click)="registrarProgresso()">Registrar</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>

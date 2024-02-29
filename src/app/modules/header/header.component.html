@@ -1,0 +1,19 @@
+<!-- Esse header só aparece pra que está logado -->
+<div class="header">
+    <div class="itens">
+        <a routerLink="/inicio">Página Inicial</a>
+
+        <a routerLink="/consultar-pacientes">Meus Pacientes</a>
+
+        <!-- Adicionar a rota  -->
+        <button (click)="irParaMinhaComunidade()">Minha Comunidade</button>    
+    </div>
+
+    <div class="meu-perfil">
+        <!-- Adicionar a funcionalidade ao botão  -->
+        <button (click)="irParaMeuPerfil()">
+            Meu Perfil 
+            <img src="../../../assets/img/icone-user.png">
+        </button>
+    </div>
+</div>

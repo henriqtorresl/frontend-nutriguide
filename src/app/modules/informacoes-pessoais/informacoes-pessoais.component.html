@@ -1,0 +1,188 @@
+<ng-container *ngIf="load === false else loaded">
+    <app-spinner></app-spinner>
+</ng-container>
+
+<ng-template #loaded>
+
+<!-- Será mostrado para o usuário nutricionista -->
+<ng-container *ngIf="isNutricionista() === true else paciente">
+    
+    <div class="container">
+
+        <div class="superior">
+
+            <div class="superior-esquerda">
+                <ng-container *ngIf="this.imagem === '' else possuiFoto">
+                    <img src="../../../assets/img/meu-perfil.png">
+                </ng-container>
+                
+                <ng-template #possuiFoto>
+                    <img [src]="this.imagem">
+                </ng-template>      
+
+                <div class="botoes-usuario">
+
+                    <label matTooltip="Alterar a foto de perfil" for="imagem">
+                        <mat-icon>upgrade</mat-icon>
+                    </label>
+                    <input (change)="upload($event)" type="file" accept="image/*" id="imagem">
+
+                    <button (click)="logout()">
+                        <mat-icon matTooltip="Sair do Nutriguide">logout</mat-icon>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="superior-direita">
+                <h1>Dados Basicos</h1>
+
+                <section class="session-itens-nutri">
+                    <section style="display: flex; flex-direction: row; justify-content: space-between;">
+                        <div class="item-superior-nutri">
+                            <p>Nome Completo</p>
+                            <h2>{{ usuarioNutricionista.nome_usuario }}</h2>
+                        </div>
+        
+                        <div class="item-superior-nutri">
+                            <p>Região</p>
+                            <h2>{{ usuarioNutricionista.regiao }}</h2>
+                        </div>
+
+                        <div class="item-superior-nutri">
+                            <p>Especialidade</p>
+                            <h2>{{ usuarioNutricionista.especialidade }}</h2>
+                        </div>
+                    </section>
+
+                    <section style="display: flex; flex-direction: row; justify-content: space-between;">
+                        <div class="item-inferior-nutri">
+                            <p>Redes Sociais</p>
+                            <h2>{{ usuarioNutricionista.especialidade }}</h2>
+                        </div>
+        
+                        <div class="item-inferior-nutri">
+                            <p>Contato</p>
+                            <h2>{{ usuarioNutricionista.telefone }}</h2>
+                        </div>
+
+                        <div class="item-inferior-nutri">
+                            <p>Formação</p>
+                            <h2>Formado(a) pela universidade: {{ usuarioNutricionista.faculdade }}</h2>
+                        </div>
+                    </section>
+                </section>
+            </div>
+
+        </div>
+
+        <div class="inferior">
+            <section class="funcionalidades">
+                <div style="display: flex; width: 100%; justify-content: end;">
+                    <div class="func-button">
+                        <button (click)="irParaMinhaComunidade()">Visualizar minhas postagens</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="botoes">
+                <div class="botao-inicio">
+                    <button (click)="irParaInicio()">Início</button>
+                </div>
+                <div class="botao-voltar">
+                    <button (click)="irParaTelaAnterior()">Voltar</button>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+</ng-container>
+
+<!-- Será mostrado para o usuário paciente -->
+<ng-template #paciente>
+    
+    <div class="container">
+
+        <div class="superior">
+
+            <div class="superior-esquerda">
+                <ng-container *ngIf="this.imagem === '' else possuiFoto">
+                    <img src="../../../assets/img/meu-perfil.png">
+                </ng-container>
+                
+                <ng-template #possuiFoto>
+                    <img [src]="this.imagem">
+                </ng-template>     
+
+                <div class="botoes-usuario">
+
+                    <label matTooltip="Alterar a foto de perfil" for="imagem">
+                        <mat-icon>upgrade</mat-icon>
+                    </label>
+                    <input (change)="upload($event)" type="file" accept="image/*" id="imagem">
+
+                    <button (click)="logout()">
+                        <mat-icon matTooltip="Sair do Nutriguide">logout</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+            <div class="superior-direita">
+                <h1>Dados Basicos</h1>
+
+                <section class="session-itens-paciente">
+                    <section style="display: flex; flex-direction: row; justify-content: space-between;">
+                        <div class="item-superior-paciente">
+                            <p>Nome Completo</p>
+                            <h2>{{ usuarioPaciente.nome_usuario }}</h2>
+                        </div>
+        
+                        <div class="item-superior-paciente">
+                            <p>Data de nascimento:</p>
+                            <h2>{{ usuarioPaciente.data_nascimento | date }}</h2>
+                        </div>
+                    </section>
+
+                    <section style="display: flex; flex-direction: row; justify-content: space-between;">
+                        <div class="item-inferior-paciente">
+                            <p>Condições Médicas</p>
+                            <h2>{{ usuarioPaciente.comorbidades }}</h2>
+                        </div>
+        
+                        <div class="item-inferior-paciente">
+                            <p>Contato</p>
+                            <h2>{{ usuarioPaciente.telefone }}</h2>
+                        </div>
+                    </section>
+                </section>
+            </div>
+
+        </div>
+
+        <div class="inferior">
+            <section class="funcionalidades">
+                <div style="display: flex; width: 100%; justify-content: end;">
+                    <div class="func-button">
+                        <button
+                            (click)="abrirVisualizarPlano()"
+                        >
+                            Visualizar meus planos alimentares
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="botoes">
+                <div class="botao-inicio">
+                    <button (click)="irParaInicio()">Início</button>
+                </div>
+                <div class="botao-voltar">
+                    <button (click)="irParaTelaAnterior()">Voltar</button>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+</ng-template>

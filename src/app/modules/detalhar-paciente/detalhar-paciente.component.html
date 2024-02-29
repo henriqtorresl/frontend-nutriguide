@@ -1,0 +1,90 @@
+<div class="container">
+
+    <div class="title">
+        <h3>Informações do Paciente</h3>
+    </div>
+
+    <form class="formulario">
+
+        <section class="inputs">
+            <mat-form-field class="input-item" appearance="outline">
+                <mat-label>Nome do Paciente</mat-label>
+                <input matInput type="text" placeholder="Nome Completo" disabled [value]="paciente.nome_usuario">
+            </mat-form-field>
+
+            <mat-form-field class="input-item" appearance="outline">
+                <mat-label>Data de Nascimento</mat-label>
+                <input matInput type="text" disabled [value]="paciente.data_nascimento | date">
+            </mat-form-field>
+
+            <mat-form-field class="input-item" appearance="outline">
+                <mat-label>CEP</mat-label>
+                <input matInput type="text" placeholder="Endereço Completo" disabled [value]="paciente.cep">
+            </mat-form-field>
+        </section>
+
+        <section class="inputs">
+            <mat-form-field class="input-item" appearance="outline">
+                <mat-label>Telefone</mat-label>
+                <input matInput type="text" placeholder="XX XXXX-XXXX" disabled [value]="paciente.telefone">
+            </mat-form-field>
+
+            <mat-form-field class="input-item" appearance="outline">
+                <mat-label>E-mail</mat-label>
+                <input matInput type="text" placeholder="paciente@email.com" disabled [value]="paciente.email">
+            </mat-form-field>
+
+            <mat-form-field class="input-item" appearance="outline">
+                <mat-label>Principal Objetivo/Queixa</mat-label>
+                <input matInput type="text" placeholder="Ex.: Emagrecimento" disabled [value]="paciente.queixa">
+            </mat-form-field>
+        </section>
+
+        <section class="inputs">
+            <mat-form-field class="input-item" appearance="outline">
+                <mat-label>Altura</mat-label>
+                <input matInput type="text" placeholder="Em metros" disabled [value]="altura(paciente.altura)">
+            </mat-form-field>
+
+            <mat-form-field class="input-item" appearance="outline">
+                <mat-label>Peso</mat-label>
+                <input matInput type="text" placeholder="Em Kg" disabled [value]="peso(paciente.peso)">
+            </mat-form-field>
+
+            <mat-form-field class="input-item" appearance="outline">
+                <mat-label>Gênero</mat-label>
+                <input matInput type="text" placeholder="Gênero" disabled [value]="genero(paciente.sexo)">
+            </mat-form-field>
+        </section>
+
+        <section class="text-area">
+
+            <mat-form-field class="text-area-item" appearance="outline">
+                <mat-label>Doenças/ Comorbidade</mat-label>
+                <textarea matInput name="" id="" cols="30" rows="10" disabled
+                placeholder="Campo para mencionar informações complementares ou pertinentes"
+                [value]="paciente.comorbidades"
+                >
+                </textarea>
+            </mat-form-field>
+
+            <mat-form-field class="text-area-item" appearance="outline">
+                <mat-label>Medicações Administradas</mat-label>
+                <textarea matInput name="" id="" cols="30" rows="10" disabled
+                placeholder="Campo para mencionar informações complementares ou pertinentes"
+                [value]="paciente.medicacoes"
+                >
+                </textarea>
+            </mat-form-field>
+
+        </section>
+    </form>
+
+    <div class="botoes">
+        <div class="botao-fechar">
+            <button (click)="fechar()">Fechar</button>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,69 @@
+<ng-container *ngIf="load === false else loaded">
+    <app-spinner></app-spinner>
+</ng-container>
+
+
+<ng-template #loaded>
+
+    <ng-container *ngIf="this.alimentosPlanoAlimentarList.length === 0 else possuiPlano">
+        <div class="container">
+            <div class="header">
+                <h1>Informações sobre seu Plano Alimentar</h1>
+            </div>
+
+            <div class="body-sem-conteudo">
+                <h2>
+                    {{ this.paciente.nome_usuario }}, seu nutricionista ainda não fez nenhum registro de plano alimentar para você...
+                </h2>
+            </div>
+
+            <div class="footer">
+                <button (click)="fechar()">Fechar</button>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-template #possuiPlano>
+        <div class="container">
+
+            <div class="header-container">
+                <div class="header">
+                    <h1>Seu Plano Alimentar</h1>
+                </div>
+
+                <div class="pdf-download">
+                    <button 
+                        matTooltip="Clique aqui para baixar as informações do seu plano alimentar"
+                        (click)="downloadPdf()"
+                    >
+                        <mat-icon>download</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+            <ng-container *ngFor="let alimento of alimentosPlanoAlimentarList">
+
+                <div class="body-conteudo">
+
+                    <h3><span>Refeição:</span> {{ alimento.nome_refeicao }}</h3>
+                    <h3><span>Alimento:</span> {{ alimento.nome_alimento }}</h3>
+                    <div
+                        style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <h4>-- Tabela Nutricional --</h4>
+                        <p>Proteínas: {{alimento.qnt_proteina}}g</p>
+                        <p>Carboidratos: {{alimento.qnt_carboidrato}}g</p>
+                        <p>Gordura: {{alimento.qnt_gordura}}g</p>
+                        <h4>-- -- -- -- -- -- --</h4>
+                    </div>
+
+                </div>
+
+            </ng-container>
+
+            <div class="footer">
+                <button (click)="fechar()">Fechar</button>
+            </div>
+        </div>
+    </ng-template>
+
+</ng-template>
