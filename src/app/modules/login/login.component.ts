@@ -91,4 +91,8 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/inicio']);  // volta para a home
   }
 
+  teste() {
+    console.log('tetse')
+  }
+
 }
