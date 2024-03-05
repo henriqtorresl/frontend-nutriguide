@@ -400,13 +400,17 @@
 
 .informacoes-body {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
 .informacoes-body-esquerda {
     max-width: 600px;
     margin: 100px 70px 100px 100px;
+
+    p {
+        font-size: 18px; 
+        margin-bottom: 40px;
+    }
 
     section {
         display: flex;
@@ -430,7 +434,7 @@
     img {
         border-radius: 50px;
         width: 50%;
-        height: 60%;
+        height: 40%;
     }
 }
 
