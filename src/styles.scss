@@ -1,3 +1,20 @@
+// Alterando as cores do angular material:
+@import '@angular/material/theming';
+@include mat-core();
+
+// criando as variaveis para as cores
+$custom-app-primary: mat-palette($mat-green);
+$custom-app-secundary: mat-palette($mat-green);
+$custom-app-warn: mat-palette($mat-red);
+
+// variavel para o tema
+$custom-theme: mat-light-theme($custom-app-primary, $custom-app-secundary, $custom-app-warn);
+
+// definindo que vou usar o tema criado acima:
+@include angular-material-theme($custom-theme);
+
+//
+
 * {
     margin: 0;
     padding: 0;
