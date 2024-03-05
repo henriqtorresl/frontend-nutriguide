@@ -41,7 +41,6 @@
     }
 
     button {
-        box-shadow: 0.05em 0.05em 0.05em #333;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -51,11 +50,11 @@
         font-weight: lighter;
         background-color: #F49320;
         border: none;
-        padding: 10px 40px 10px 40px;  /* superior | direita | inferior | esquerda */
+        padding: 10px 20px 10px 20px;  /* superior | direita | inferior | esquerda */
         margin: 50px 0 50px 20px; 
-        border-radius: 50px;
-        img {
-            margin: 0 0 0 15px;
+        border-radius: 4px;
+        mat-icon {
+            margin-left: 10px;
         }
     }
 
@@ -153,7 +152,7 @@
     margin: 5px;
     padding: 5px 15px 5px 15px;
     display: flex;
-    border-radius: 50px;
+    border-radius: 5px;
 }
 
 .botao:hover {
@@ -184,8 +183,9 @@
         font-family: Overpass;
         font-weight: lighter;
         border: none;
-        border-radius: 50px;
+        border-radius: 5px;
         padding: 12px;
+        outline: none;
     }
 
     input:hover {
@@ -201,8 +201,9 @@
         font-family: Overpass;
         font-weight: lighter;
         border: none;
-        border-radius: 50px;
+        border-radius: 5px;
         padding: 12px;
+        outline: none;
     }
 
     input:hover {
@@ -452,7 +453,8 @@
     margin-bottom: 30px;
     width: 70%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     border-bottom: 5px dotted rgba(119, 187, 133, 0.769);
     padding-bottom: 30px;
 
@@ -460,9 +462,31 @@
         font-size: 16px;
         color: black;
         text-decoration: none;
-    }
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    a:hover {
-        color: rgba(119, 187, 133, 0.769);
+        span {
+            color: rgba(119, 187, 133, 0.769);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 5px;
+
+            mat-icon {
+                font-size: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: start;
+            }
+        }
+
+        &:hover {
+            color: rgba(119, 187, 133, 0.769); 
+            span {
+                color: black;
+            }
+        }
     }
 }
