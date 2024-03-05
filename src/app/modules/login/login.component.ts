@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { LoginService } from 'src/app/services/login-service/login.service';
 import { NutricionistaService } from 'src/app/services/nutricionista-service/nutricionista.service';
 import { UsuarioService } from 'src/app/services/usuario-service/usuario.service';
+import Tabs from '../tabs/tabs.component';
 
 @Component({
   selector: 'app-login',
@@ -16,10 +17,19 @@ export class LoginComponent implements OnInit {
 
   formulario!: FormGroup
 
+  tabs: Tabs[] = [
+    {
+      name: 'Informações Pessoais',
+      key: 'a',
+      isActive: true
+    }
+  ]
+
+  key: string = 'a';
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute,
     private loginService: LoginService,
     private snackBar: MatSnackBar,
     private usuarioService: UsuarioService,
@@ -38,15 +48,12 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    // pegando os dados do usuário do formulário
     const usuario = {
       nome: this.formulario.controls['nome'].value,
       email: this.formulario.controls['email'].value
     }
 
-    // adicionar o metodo que faz o login
     this.loginService.login(usuario).subscribe(
-    // sucesso:
     (r) => {
       const token = r.token;
       const msg = r.msg;
@@ -70,17 +77,16 @@ export class LoginComponent implements OnInit {
               if (n.id_usuario === user.id_usuario) {
                 localStorage.setItem('idNutri', n.id_nutricionista.toString());
                 
-                this.router.navigate(['/consultar-pacientes']);  // vai para a página de meus pacientes
+                this.router.navigate(['/consultar-pacientes'])
               }
             });
           });
         } else {
-          this.router.navigate(['/inicio']);  // volta para a home
+          this.router.navigate(['/inicio']);
         }
 
       })
     },
-    // erro:
     (e) => {
       const msg: string = e.error.msg;
       this.snackBar.open(msg, 'OK', {duration: 2500});
@@ -88,11 +94,11 @@ export class LoginComponent implements OnInit {
   }
 
   cancelar(): void {
-    this.router.navigate(['/inicio']);  // volta para a home
+    this.router.navigate(['/inicio']);
   }
 
-  teste() {
-    console.log('tetse')
+  abrirTab(key: string) {
+    this.key = key;
   }
 
 }

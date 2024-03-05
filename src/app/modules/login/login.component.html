@@ -1,32 +1,52 @@
 <div class="container">
+
     <div class="header">
-        <img src="../../../assets/img/logo2.png">
-        <h1>Login</h1>
+        <h1>
+            <mat-icon>no_food</mat-icon> 
+            Login 
+            <mat-icon>restaurant</mat-icon>
+        </h1>
     </div>
 
     <div class="formulario">
         <form [formGroup]="formulario" (keyup.enter)="login()">
 
-            <mat-form-field class="item" appearance="outline">
-                <mat-label>Nome Completo</mat-label>
-                <input type="text" matInput placeholder="Nome Completo" formControlName="nome">
-            </mat-form-field>
-    
-            <mat-form-field class="item" appearance="outline">
-                <mat-label>E-mail</mat-label>
-                <input type="email" matInput placeholder="E-mail" formControlName="email">
-            </mat-form-field>
-    
+            <app-tabs [tabs]="tabs" (onTabChange)="abrirTab($event)">
+
+                <ng-container [ngSwitch]="key">
+                
+                    <div *ngSwitchCase="'a'" class="dados-pessoais">        
+                        <mat-form-field 
+                            style="width: 100%;" 
+                            appearance="outline"
+                            matTooltip="Para logar na aplicação, não é necessário senha, apenas o nome completo e o e-mail"
+                        >
+                            <mat-label>Nome Completo</mat-label>
+                            <input type="text" matInput placeholder="Nome Completo" formControlName="nome">
+                        </mat-form-field>
+        
+                        <mat-form-field style="width: 100%;" appearance="outline">
+                            <mat-label>E-mail</mat-label>
+                            <input type="email" matInput placeholder="E-mail" formControlName="email">
+                        </mat-form-field>
+        
+                    </div>
+
+                </ng-container>
+
+            </app-tabs>
+
             <div class="botao">
                 <div class="cancelar">
                     <button type="button" (click)="cancelar()">Cancelar</button>
                 </div>
-    
+
                 <div class="logar">
-                    <button type="button" (click)="login()">Entrar</button>
+                    <button type="button" (click)="login()">Logar</button>
                 </div>
             </div>
-    
+
         </form>
     </div>
+
 </div>
