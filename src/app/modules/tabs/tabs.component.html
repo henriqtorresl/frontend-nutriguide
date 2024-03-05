@@ -1,0 +1,11 @@
+<div class="tab">
+
+    <ng-container *ngFor="let tab of tabs;">
+        <button (click)="abrirTab(tab.key)" [ngClass]="tab.isActive ? 'ativo' : ''"> 
+            {{ tab.name }} 
+        </button>
+    </ng-container>
+
+</div>
+
+<ng-content></ng-content>
