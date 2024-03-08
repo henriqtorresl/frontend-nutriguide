@@ -26,4 +26,4 @@ Para obter mais ajuda sobre o Angular CLI, use `ng help` ou confira a página [V
 
 ## Url de Produção
 
-Para acessar nosso site: Quando o site for postado, a url será adicionada...
+Para acessar nosso site: `https://nutriguide.vercel.app/inicio`
