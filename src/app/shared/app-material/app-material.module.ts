@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [],
@@ -20,7 +21,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatInputModule,
     MatSelectModule,
     MatSliderModule,
-    MatDividerModule
+    MatDividerModule,
+    MatAutocompleteModule
   ]
 })
 export class AppMaterialModule { }

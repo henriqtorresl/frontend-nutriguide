@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
-import { LoginService } from 'src/app/services/login-service/login.service';
+import { AuthService } from 'src/app/services/auth-service/auth.service';
 import { NutricionistaService } from 'src/app/services/nutricionista-service/nutricionista.service';
 import { UsuarioService } from 'src/app/services/usuario-service/usuario.service';
 import Tabs from '../tabs/tabs.component';
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private loginService: LoginService,
+    private authService: AuthService,
     private snackBar: MatSnackBar,
     private usuarioService: UsuarioService,
     private nutricionistaService: NutricionistaService
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
       email: this.formulario.controls['email'].value
     }
 
-    this.loginService.login(usuario).subscribe(
+    this.authService.login(usuario).subscribe(
     (r) => {
       const token = r.token;
       const msg = r.msg;

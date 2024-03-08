@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router, ActivatedRoute } from '@angular/router';
-import { take } from 'rxjs';
-import { LoginService } from 'src/app/services/login-service/login.service';
-import { NutricionistaService } from 'src/app/services/nutricionista-service/nutricionista.service';
-import { UsuarioService } from 'src/app/services/usuario-service/usuario.service';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth-service/auth.service';
 import Tabs from '../tabs/tabs.component';
+import UsuarioNutricionista from 'src/app/interfaces/UsuarioNutricionista';
 
 @Component({
   selector: 'app-cadastro',
@@ -20,7 +18,7 @@ export class CadastroComponent {
       name: 'Informações Pessoais',
       key: 'a',
       isActive: true
-    }, 
+    },
     {
       name: 'Informações Sobre o Nutri',
       key: 'b',
@@ -30,17 +28,16 @@ export class CadastroComponent {
 
   key: string = 'a';
 
-  formulario!: FormGroup
+  formulario!: FormGroup;
+
+  msgBotaoCadastrar!: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute,
-    private loginService: LoginService,
-    private snackBar: MatSnackBar,
-    private usuarioService: UsuarioService,
-    private nutricionistaService: NutricionistaService
-  ) {}
+    private authService: AuthService,
+    private snackBar: MatSnackBar
+  ) { }
 
   ngOnInit(): void {
     this.criarFormulario();
@@ -48,59 +45,80 @@ export class CadastroComponent {
 
   criarFormulario(): void {
     this.formulario = this.formBuilder.group({
-      nome: [],
-      email: []
+      nome: ['', Validators.required],
+      cpf: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+      email: ['', [Validators.required, Validators.email]],
+      sexo: ['', Validators.required],
+      cep: ['', [Validators.required, Validators.pattern(/^\d{5}-\d{3}$/)]],
+      telefone: ['', [Validators.required, Validators.pattern(/^\(\d{2}\)\s\d{4,5}-\d{4}$/)]],
+      dataNascimento: ['', Validators.required],
+      formacao: ['', Validators.required],
+      especialidade: ['', Validators.required],
+      regiao: ['', Validators.required],
+      redeSocial: ['', Validators.required]
     });
   }
 
   cadastro(): void {
     const usuario = {
       nome: this.formulario.controls['nome'].value,
-      email: this.formulario.controls['email'].value
+      cpf: this.formulario.controls['cpf'].value,
+      email: this.formulario.controls['email'].value,
+      sexo: this.formulario.controls['sexo'].value,
+      cep: this.formulario.controls['cep'].value,
+      telefone: this.formulario.controls['telefone'].value,
+      dataNascimento: this.formulario.controls['dataNascimento'].value,
+      formacao: this.formulario.controls['formacao'].value,
+      especialidade: this.formulario.controls['especialidade'].value,
+      regiao: this.formulario.controls['regiao'].value,
+      redeSocial: this.formulario.controls['redeSocial'].value
     }
 
-    this.loginService.login(usuario).subscribe(
-    (r) => {
-      const token = r.token;
-      const msg = r.msg;
+    const usuarioNutricionista: UsuarioNutricionista = {
+      id_usuario: 0,
+      cpf: usuario.cpf,
+      nome_usuario: usuario.nome,
+      email: usuario.email,
+      sexo: usuario.sexo,
+      telefone: usuario.telefone,
+      cep: usuario.cep,
+      data_nascimento: usuario.dataNascimento,
+      tipo_usuario: 'nutricionista',
+      id_nutricionista: 0,
+      regiao: usuario.regiao,
+      faculdade: usuario.formacao,
+      especialidade: usuario.especialidade,
+      redesocial: usuario.redeSocial
+    }
 
-      localStorage.setItem('token', token);
-      localStorage.setItem('nome', usuario.nome);
-
-      this.snackBar.open(msg, 'OK', {duration: 2500});
+    this.authService.cadastro(usuarioNutricionista).subscribe(
+      (r) => {
+        const msg = r.msg;
   
-      this.usuarioService.getUserByName(usuario.nome)
-      .pipe(take(1))
-      .subscribe((user) => {
-
-        localStorage.setItem('role', user.tipo_usuario);
-
-        if(user.tipo_usuario === 'nutricionista') {
-
-          this.nutricionistaService.getAll().subscribe((nutri) => {
-            nutri.forEach((n) => {
-
-              if (n.id_usuario === user.id_usuario) {
-                localStorage.setItem('idNutri', n.id_nutricionista.toString());
-                
-                this.router.navigate(['/consultar-pacientes']);
-              }
-            });
-          });
-        } else {
-          this.router.navigate(['/inicio']); 
-        }
-
+        this.snackBar.open(msg, 'OK', {duration: 2500});
+    
+        this.router.navigate(['/login']);
+      },
+      (e) => {
+        const msg: string = e.error.msg;
+        this.snackBar.open(msg, 'OK', {duration: 2500});
       })
-    },
-    (e) => {
-      const msg: string = e.error.msg;
-      this.snackBar.open(msg, 'OK', {duration: 2500});
-    })
+  }
+
+  desabilitarBotao(): boolean {
+    if (this.formulario.invalid) {
+      this.msgBotaoCadastrar = 'Preencha todos os campos corretamente!';
+
+      return true;
+    } else {
+      this.msgBotaoCadastrar = '';
+
+      return false;
+    }
   }
 
   cancelar(): void {
-    this.router.navigate(['/inicio']); 
+    this.router.navigate(['/inicio']);
   }
 
   abrirTab(key: string) {

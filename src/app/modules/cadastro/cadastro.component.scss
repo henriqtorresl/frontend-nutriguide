@@ -86,3 +86,13 @@
 .cadastrar button:hover {
     background-color: #228021;
 }
+
+.select-below .mat-select-panel {
+    margin-top: 0 !important;
+}
+
+.cadastrar button:disabled {
+    background-color: #CCCCCC; 
+    color: #999999;
+    cursor: not-allowed;
+}
