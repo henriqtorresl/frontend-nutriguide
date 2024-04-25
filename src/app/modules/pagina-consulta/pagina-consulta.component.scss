@@ -1,491 +1,186 @@
-.plano-de-fundo {
-    position: absolute;
+/* Mobile first */
+
+/* Botões */
+button {
+    background-color: #F49320 !important;
+    color: #FFF !important;
+
+    &:hover {
+        background-color: #ca7b1a !important;
+    }
+}
+
+/* Consultar Nutricionista */
+.consultar-nutri {
     width: 100%;
-    height: 700px;
-}
-
-.header {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-}
-
-#logo {
-    width: 30%;
-    height: 100%;
-}
-
-.botoes-nao-logado {
-    display: flex;
-    flex-direction: row;
-    margin-right: 50px;
-    flex-wrap: wrap;
-
-    h3 {
-        color: #FFFFFF;
-        margin-right: 20px;  
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        a {
-            color: #FFFFFF;
-            margin: 25px;
-        }
-        a:hover {
-            cursor: pointer;
-            color: #d1cfcf;
-        }
-    }
-
-    button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #FFFFFF;
-        font-size: 24px;
-        font-family: Overpass;
-        font-weight: lighter;
-        background-color: #F49320;
-        border: none;
-        padding: 10px 20px 10px 20px;  /* superior | direita | inferior | esquerda */
-        margin: 50px 0 50px 20px; 
-        border-radius: 4px;
-        mat-icon {
-            margin-left: 10px;
-        }
-    }
-
-    button:hover {
-        cursor: pointer;
-        background-color: #b66a0e;
-    }
-}
-
-.botoes-logado {
-    display: flex;
-    flex-direction: row;
-    margin-right: 50px;
-    flex-wrap: wrap;
-
-    
-    a {
-        text-shadow: 0.05em 0.05em 0.05em #333;
-        margin-right: 25px;
-        font-size: 25px;
-        text-decoration: none;
-        color: #FFFFFF;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    a:hover {
-        cursor: pointer;
-        color: #d1cfcf;
-    }
-
-
-    button {
-        box-shadow: 0.05em 0.05em 0.05em #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #FFFFFF;
-        font-size: 24px;
-        font-family: Overpass;
-        font-weight: lighter;
-        background-color: #F49320;
-        border: none;
-        padding: 15px 15px 15px 15px;  /* superior | direita | inferior | esquerda */
-        margin: 50px 0 50px 20px; 
-        border-radius: 50px;
-        img {
-            margin: 0 0 0 15px;
-        }
-    }
-
-    button:hover {
-        cursor: pointer;
-        background-color: #b66a0e;
-    }
-}
-
-.container {
-    position: absolute;
-    width: 100%;
-    margin: 100px 0 0 0;   /* superior | direita | inferior | esquerda */
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-#title {
-    color: #fff;
-    font-size: 48px;
-    font-family: Overpass;
-    font-weight: bold;
-}
-
-#subtitle {
-    margin-top: 30px;
-    color: #fff;
-    font-size: 32px;
-    font-family: Overpass;
-    font-weight: lighter;
-    padding: 10px 0 10px 0;     /* superior | direita | inferior | esquerda */
-    border-bottom: 3px solid #FFFFFF;
-    margin: 3px;
-}
-
-.botao {
-    color: #FFFFFF;
-    font-size: 24px;
-    font-family: Overpass;
-    font-weight: lighter;
-    background-color: #F49320;
-    border: none;
-    margin: 5px;
-    padding: 5px 15px 5px 15px;
-    display: flex;
-    border-radius: 5px;
-}
-
-.botao:hover {
-    cursor: pointer;
-    background-color: #b66a0e;
-}
-
-.botoes-suporiores {
-    display: flex;
-    flex-direction: row;
-
-    button:hover {
-        background-color: #F49320;
-        cursor:auto;
-    }
-}
-
-.inputs {
-    margin: 5px;
+    height: 90%;
+    background: url('../../../assets/img/background.png') no-repeat bottom/500%;
     display: flex;
     flex-direction: column;
-}
-
-.input-superior {
-    input {
-        width: 96%;
-        font-size: 24px;
-        font-family: Overpass;
-        font-weight: lighter;
-        border: none;
-        border-radius: 5px;
-        padding: 12px;
-        outline: none;
-    }
-
-    input:hover {
-        background-color: #f0ebeb;
-    }
-}
-
-.input-inferior {
-    margin: 10px 0 0 0;
-    input {
-        width: 45%;
-        font-size: 24px;
-        font-family: Overpass;
-        font-weight: lighter;
-        border: none;
-        border-radius: 5px;
-        padding: 12px;
-        outline: none;
-    }
-
-    input:hover {
-        background-color: #f0ebeb;
-    }
-
-    display: flex;
-    justify-content: space-between;
-}
-
-.submit {
-    display: flex;
-    flex-direction: row-reverse;
-
-    button {
-        margin-top: 10px;
-        padding: 10px;
-    }
-}
-
-.lifestyle {
-    margin-top: 250px;
-    display: flex;
-    align-items: center; 
     justify-content: center;
-
-    img {
-        position: absolute;
-    }
-}
-
-.list {
-    margin-top: 100px;
-    width: 100%;
-    display: flex;
-}
-
-.item {
-    margin: 60px 0 60px 0;
-    display: flex;
-    flex-direction: row;
     align-items: center;
-    font-size: 20px;
 
-    img {
-        width: 35px;
-        height: 27px;
-        margin-right: 30px;
+    .container {
+        width: 50%;
     }
 }
 
-.imagens {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    div {
-        display: flex;
-        justify-content: space-between;
-        margin: 5px;
-    }
-}
-
-.imagem1 {
-    width: 47%;
-    border-radius: 50px;
-}
-
-.imagem2 {
-    width: 48%;
-    border-radius: 50px;
-}
-
-.imagem3 {
-    width: 100%;
-    height: 35%;
-    border-radius: 50px;
-    margin-top: 5px;
-}
-
-.container-opcoes {
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.opcoes {
-    background-color: #F2FFF5;
-    width: 70%;
-    border-radius: 20px;
-    box-shadow: -7px -7px rgba(222, 250, 228, 0.769);
-}
-
-.opcoes-superior {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-    padding: 20px;
-    border-bottom: 5px dotted rgba(222, 250, 228, 0.769);
-}
-
-.opcoes-inferior {
-    padding: 0 10px 0 10px;
-    display: flex;
-    justify-content: space-between;
-    section {
-        display: flex;
-        align-items: center; 
-        justify-content: center;
-    }
-}
-
-.tenha-no-nutriguide {
-    width: 100%;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-}
-
-.tenha-no-nutriguide-title {
-    span {
-        color: #28B225;
-        font-size: 60px;
-    }
-}
-
-.tenha-no-nutriguide-body {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-}
-
-.tenha-no-nutriguide-item {
-    margin: 10px 40px 10px 40px;       /* superior | direita | inferior | esquerda */
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    max-width: 600px;
-    border-bottom: 5px dotted rgba(222, 250, 228, 0.769);
-
-    img {
-        margin: 20px;
-    }
-
-    h3 {
-        margin: 0 0 20px 0;
-    }
-}
-
-.informacoes {
-    width: 100%;
-}
-
-.informacoes-header {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-.informacoes-header1 {
-    padding: 15px 0 0 150px;  /* superior | direita | inferior | esquerda */
-    margin-left: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: end; 
-    justify-content: end;
-    background-color: #28B225;
-    border-radius: 30px;
-
-    h2 {
-        color: #FFFFFF;
-        display: flex;
-        padding-right: 15px;
-        font-size: 32px;
-    }
+.title {
+    margin-bottom: 5px;
 
     h1 {
-        padding-top: 60px;
-        font-size: 70px;
+        font-weight: bold;
+        font-size: 22px;
+        color: #fff;
+        text-transform: uppercase;
+        border-bottom: 1px solid #FFF;
+        text-align: center;
+        margin-bottom: 5px;
     }
-}
-
-.informacoes-header2 {
-    display: flex;
-    flex-direction: column-reverse;
-
-    h1 {
-        font-size: 70px;
-    }
-}
-
-.informacoes-body {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.informacoes-body-esquerda {
-    max-width: 600px;
-    margin: 100px 70px 100px 100px;
 
     p {
-        font-size: 18px; 
-        margin-bottom: 40px;
+        display: none;
+        color: #fff;
+        border-bottom: 1px solid #FFF;
+    }
+}
+
+.atendimentos {
+    display: none;
+}
+
+.formulario {
+    mat-form-field {
+        width: 100%;
     }
 
-    section {
+    /* div do botão do formulário */
+    .submit {
+        width: 100%;
         display: flex;
-        padding: 10px;
-        font-size: 16px;
-    }
-
-    img {
-        width: 20px; 
-        height: 20px;
-        margin-right: 5px;
+        justify-content: end;
     }
 }
 
-.informacoes-body-direita {
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    background: url('../../../assets/img/circulos.png') center/60% no-repeat;
 
-    img {
-        border-radius: 50px;
-        width: 50%;
-        height: 40%;
+// Tablet
+@media screen and (min-width: 768px) and (max-width: 992px) {
+
+    /* Consultar Nutricionista */
+    .consultar-nutri {
+        height: 100%;
+        background: url('../../../assets/img/background.png') no-repeat top/120%;
     }
-}
 
-.footer {
-    background-color: #FDE9D2;
-    width: 100%;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-infos {
-    margin-bottom: 30px;
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 5px dotted rgba(119, 187, 133, 0.769);
-    padding-bottom: 30px;
-
-    a {
-        font-size: 16px;
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        span {
-            color: rgba(119, 187, 133, 0.769);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-right: 5px;
-
-            mat-icon {
-                font-size: 20px;
-                display: flex;
-                justify-content: center;
-                align-items: start;
-            }
+    .title {
+        h1 {
+            font-size: 22px;
+            border-bottom: none;
+            text-align: start;
+            margin-bottom: 0;
         }
 
-        &:hover {
-            color: rgba(119, 187, 133, 0.769); 
-            span {
-                color: black;
+        p {
+            display: block;
+            color: #fff;
+            border-bottom: 1px solid #FFF;
+        }
+    }
+
+    .atendimentos {
+        display: block;
+
+        button {
+            margin: 10px 10px 10px 0;
+        }
+    }
+}
+
+// Desktop
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+
+    /* Consultar Nutricionista */
+    .consultar-nutri {
+        height: 100%;
+        background: url('../../../assets/img/background.png') no-repeat top/100%;
+    }
+
+    .title {
+        h1 {
+            font-size: 24px;
+            border-bottom: none;
+            text-align: start;
+            margin-bottom: 0;
+        }
+
+        p {
+            display: block;
+            color: #fff;
+            border-bottom: 1px solid #FFF;
+        }
+    }
+
+    .atendimentos {
+        display: block;
+
+        button {
+            margin: 10px 10px 10px 0;
+        }
+    }
+}
+
+// Telas grandes
+@media screen and (min-width: 1200px) {
+
+    /* Consultar Nutricionista */
+    .consultar-nutri {
+        height: 80%;
+        background: url('../../../assets/img/background.png') no-repeat bottom/100%;
+
+        .container {
+            button {
+                font-size: 20px;
+            }
+    
+            input {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .title {
+        h1 {
+            font-size: 30px;
+            border-bottom: none;
+            text-align: start;
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: 24px;
+            display: block;
+            color: #fff;
+            border-bottom: 1px solid #FFF;
+        }
+    }
+
+    .atendimentos {
+        display: block;
+
+        button {
+            margin: 10px 10px 10px 0;
+        }
+    }
+
+    .formulario {
+        width: 100%;
+
+        div {
+            display: flex;
+            justify-content: space-between;
+
+            mat-form-field {
+                width: 48%;
             }
         }
     }
