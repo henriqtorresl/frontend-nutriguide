@@ -62,6 +62,65 @@ button {
     }
 }
 
+/* Lifestyle */
+.lifestyle {
+    width: 100%;
+    height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+}
+
+.lifestyle-title {
+    padding: 50px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: url('../../../assets/img/lifestyle.png') no-repeat right;
+    animation: moveBackground 4s linear infinite;
+
+    h1 {
+        font-size: 22px;
+    }
+}
+
+// Animação para o background se mover:
+@keyframes moveBackground {
+    from {
+        background-position: -150% 0;
+    }
+    to {
+        background-position: 250% 0;
+    }
+}
+
+.lifestyle-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list {
+    li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    img {
+        width: 25px;
+        margin-right: 5px;
+    }
+}
+
+.morangos {
+    display: none;
+}
+
+.atividades {
+    display: none;
+}
 
 // Tablet
 @media screen and (min-width: 768px) and (max-width: 992px) {
