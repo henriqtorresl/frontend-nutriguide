@@ -169,7 +169,7 @@ button {
 
     /* Consultar Nutricionista */
     .consultar-nutri {
-        height: 100%;
+        height: 80%;
         background: url('../../../assets/img/background.png') no-repeat top/100%;
     }
 
@@ -200,6 +200,46 @@ button {
     .lifestyle-title {
         animation: none;
         background-position: center;
+    }
+
+    .lifestyle-body {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .list {
+        li {
+            margin: 20px 0 20px 0;
+        }
+    }
+
+    .morangos {
+        display: block;
+
+        img {
+            width: 50%;
+        }
+    }
+
+    .atividades {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+
+        img {
+            width: 35%;
+            border-radius: 25px;
+            margin: 10px 0 10px 0; 
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 
