@@ -65,10 +65,7 @@ button {
 /* Lifestyle */
 .lifestyle {
     width: 100%;
-    height: 100%;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
+    height: auto;
 }
 
 .lifestyle-title {
@@ -127,8 +124,8 @@ button {
 
     /* Consultar Nutricionista */
     .consultar-nutri {
-        height: 100%;
-        background: url('../../../assets/img/background.png') no-repeat top/120%;
+        height: 90%;
+        background: url('../../../assets/img/background.png') no-repeat top/135%;
     }
 
     .title {
@@ -151,6 +148,18 @@ button {
 
         button {
             margin: 10px 10px 10px 0;
+        }
+    }
+
+    /* Lifestyle */
+    .lifestyle-title {
+        animation: none;
+        background-position: center;
+    }
+
+    .list {
+        li {
+            margin: 20px 0 20px 0;
         }
     }
 }
@@ -185,6 +194,12 @@ button {
         button {
             margin: 10px 10px 10px 0;
         }
+    }
+
+    /* Lifestyle */
+    .lifestyle-title {
+        animation: none;
+        background-position: center;
     }
 }
 
@@ -242,5 +257,11 @@ button {
                 width: 48%;
             }
         }
+    }
+
+    /* Lifestyle */
+    .lifestyle-title {
+        animation: none;
+        background-position: center;
     }
 }
