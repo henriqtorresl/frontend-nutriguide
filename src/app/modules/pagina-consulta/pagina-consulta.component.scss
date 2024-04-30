@@ -303,5 +303,50 @@ button {
     .lifestyle-title {
         animation: none;
         background-position: center;
+
+
+        h1 {
+            font-size: 30px;
+        }
+    }
+
+    .lifestyle-body {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .list {
+        li {
+            margin: 40px 0 40px 0;
+            font-size: 22px;
+        }
+    }
+
+    .morangos {
+        display: block;
+    }
+
+    .atividades {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+
+        img {
+            width: 70%;
+            border-radius: 25px;
+            margin: 10px 0 10px 0; 
+        }
+
+        div {
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+
+            img {
+                width: 45%;
+            }
+        }
     }
 }
