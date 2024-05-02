@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -8,13 +8,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  @Input() rota!: string;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    console.log(this.rota);
+  } 
 
+  irParaLogin(): void {
+    this.router.navigate(['/login'], { relativeTo: this.route.parent })
   }
 
   irParaMeuPerfil(): void {

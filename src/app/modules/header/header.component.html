@@ -1,19 +1,18 @@
-<!-- Esse header só aparece pra que está logado -->
-<div class="header">
-    <div class="itens">
-        <a routerLink="/inicio">Página Inicial</a>
-
-        <a routerLink="/consultar-pacientes">Meus Pacientes</a>
-
-        <!-- Adicionar a rota  -->
-        <button (click)="irParaMinhaComunidade()">Minha Comunidade</button>    
-    </div>
-
-    <div class="meu-perfil">
-        <!-- Adicionar a funcionalidade ao botão  -->
-        <button (click)="irParaMeuPerfil()">
-            Meu Perfil 
-            <img src="../../../assets/img/icone-user.png">
+<div class="header-home">
+    <img src="../../../assets/img/logo.png" alt="Logo">
+    <div class="itens-home">
+        <section>
+            <span>É nutricionista?</span>
+            <a href="/cadastro">Cadastre-se</a>
+        </section>
+        <button 
+            mat-flat-button
+            (click)="irParaLogin()"
+        >
+            Login
+            <mat-icon>
+                login
+            </mat-icon>
         </button>
     </div>
 </div>
