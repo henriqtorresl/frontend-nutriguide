@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PaginaConsultaComponent } from './modules/pagina-consulta/pagina-consulta.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent } from './modules/header/header.component';
+import { NavBarInicioComponent } from './modules/nav-bar-inicio/nav-bar-inicio.component';
 import { CadastroComponent } from './modules/cadastro/cadastro.component';
 import { LoginComponent } from './modules/login/login.component';
 import { MeusPacientesComponent } from './modules/meus-pacientes/meus-pacientes.component';
@@ -33,12 +33,13 @@ import { CriarPostComponent } from './modules/criar-post/criar-post.component';
 import { EnviarEmailComponent } from './modules/enviar-email/enviar-email.component';
 import { EditarPacienteComponent } from './modules/editar-paciente/editar-paciente.component';
 import { TabsComponent } from './modules/tabs/tabs.component';
+import { NavBarLoginComponent } from './modules/nav-bar-login/nav-bar-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PaginaConsultaComponent,
-    HeaderComponent,
+    NavBarInicioComponent,
     CadastroComponent,
     LoginComponent,
     MeusPacientesComponent,
@@ -62,7 +63,8 @@ import { TabsComponent } from './modules/tabs/tabs.component';
     CriarPostComponent,
     EnviarEmailComponent,
     EditarPacienteComponent,
-    TabsComponent
+    TabsComponent,
+    NavBarLoginComponent
   ],
   imports: [
     AppRoutingModule,

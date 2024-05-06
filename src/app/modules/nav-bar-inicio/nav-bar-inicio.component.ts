@@ -1,14 +1,12 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: 'app-nav-bar-inicio',
+  templateUrl: './nav-bar-inicio.component.html',
+  styleUrls: ['./nav-bar-inicio.component.scss']
 })
-export class HeaderComponent implements OnInit {
-
-  @Input() rota!: string;
+export class NavBarInicioComponent implements OnInit {
 
   constructor(
     private router: Router,
@@ -16,7 +14,7 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.rota);
+
   } 
 
   irParaLogin(): void {

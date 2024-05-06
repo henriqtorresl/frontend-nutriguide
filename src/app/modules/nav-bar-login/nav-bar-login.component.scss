@@ -1,0 +1,43 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 20%;
+
+    img {
+        width: 80%;
+        background-color: #CBEDCB;
+    }
+}
+
+// Tablet
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .header {
+        img {
+            width: 50%;
+            background-color: transparent;
+        }
+    }
+}
+
+// Desktop
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .header {
+        img {
+            width: 50%;
+            background-color: transparent;
+        }
+    }
+}
+
+// Telas grandes
+@media screen and (min-width: 1200px) {
+    .header {
+        img {
+            width: 35%;
+            background-color: transparent;
+        }
+    }
+}
