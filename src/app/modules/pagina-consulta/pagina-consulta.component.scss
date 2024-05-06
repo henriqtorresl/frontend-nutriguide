@@ -86,6 +86,7 @@ button {
     from {
         background-position: -150% 0;
     }
+
     to {
         background-position: 250% 0;
     }
@@ -117,6 +118,57 @@ button {
 
 .atividades {
     display: none;
+}
+
+/* Área */
+.area {
+    display: flex;
+    justify-content: end;
+    margin-top: 50px;
+    width: 100%;
+
+    section {
+        width: 100%;
+        background-color: #F2FFF5;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        box-shadow: -7px -7px #E6FBEA;
+    }
+}
+
+.area-title {
+    width: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 5px dotted #E6FBEA;
+}
+
+.area-itens {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+        list-style: none;
+
+        li {
+            padding-top: 10px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            font-weight: bold;
+            font-size: 16px;
+
+            img {
+                margin-right: 5px;
+            }
+        }
+    }
 }
 
 // Tablet
@@ -166,6 +218,14 @@ button {
             margin: 20px 0 20px 0;
         }
     }
+
+    /* Área */
+    .area {
+        section {
+            width: 90%;
+        }
+    }
+
 }
 
 // Desktop
@@ -239,7 +299,7 @@ button {
         img {
             width: 35%;
             border-radius: 25px;
-            margin: 10px 0 10px 0; 
+            margin: 10px 0 10px 0;
         }
 
         div {
@@ -247,6 +307,24 @@ button {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+    }
+
+    /* Área */
+    .area {
+        section {
+            width: 90%;
+        }
+    }
+
+    .area-itens {
+        display: flex;
+        flex-direction: row;
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
         }
     }
 }
@@ -265,7 +343,7 @@ button {
             button {
                 font-size: 20px;
             }
-    
+
             input {
                 font-size: 20px;
             }
@@ -346,7 +424,7 @@ button {
         img {
             width: 70%;
             border-radius: 25px;
-            margin: 10px 0 10px 0; 
+            margin: 10px 0 10px 0;
         }
 
         div {
@@ -357,6 +435,30 @@ button {
             img {
                 width: 45%;
             }
+        }
+    }
+
+    /* Área */
+    .area {
+        section {
+            width: 70%;
+        }
+    }
+
+    .area-title {
+        h1 {
+            font-size: 30px;
+        }
+    }
+
+    .area-itens {
+        display: flex;
+        flex-direction: row;
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
         }
     }
 }
