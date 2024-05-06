@@ -208,6 +208,10 @@ button {
         align-items: center;
         border-bottom: 5px dotted #E6FBEA;
 
+        img {
+            width: 30%;
+        }
+
         section {
             margin-left: 20px;
             h3 {
@@ -547,6 +551,10 @@ button {
 
         div {
             margin: 0 30px 10px 30px;
+
+            img {
+                width: 50%;
+            }
         }
     }
 }
