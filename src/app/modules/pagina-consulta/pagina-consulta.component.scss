@@ -21,7 +21,7 @@ button {
     align-items: center;
 
     .container {
-        width: 50%;
+        width: 80%;
     }
 }
 
@@ -125,7 +125,11 @@ button {
     /* Consultar Nutricionista */
     .consultar-nutri {
         height: 100%;
-        background: url('../../../assets/img/background.png') no-repeat top/135%;
+        background: url('../../../assets/img/background.png') no-repeat top/160%;
+
+        .container {
+            width: 70%;
+        }
     }
 
     .title {
@@ -170,7 +174,11 @@ button {
     /* Consultar Nutricionista */
     .consultar-nutri {
         height: 100%;
-        background: url('../../../assets/img/background.png') no-repeat top/100%;
+        background: url('../../../assets/img/background.png') no-repeat top/130%;
+
+        .container {
+            width: 50%;
+        }
     }
 
     .title {
@@ -249,9 +257,11 @@ button {
     /* Consultar Nutricionista */
     .consultar-nutri {
         height: 90%;
-        background: url('../../../assets/img/background.png') no-repeat bottom/100%;
+        background: url('../../../assets/img/background.png') no-repeat bottom/150%;
 
         .container {
+            width: 50%;
+
             button {
                 font-size: 20px;
             }
