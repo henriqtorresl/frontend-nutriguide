@@ -47,6 +47,9 @@ button {
 
 .atendimentos {
     display: none;
+    button {
+        cursor: default;
+    }
 }
 
 .formulario {
