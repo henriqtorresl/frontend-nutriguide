@@ -1,20 +1,27 @@
 <ng-container [ngSwitch]="rota">
 
-    <ng-template [ngSwitchCase]="'/inicio'">
-      <app-nav-bar-inicio></app-nav-bar-inicio>
-    </ng-template>
+  <!-- Nav Bar para a tela de início -->
+  <ng-template [ngSwitchCase]="'/'">
+    <app-nav-bar-inicio></app-nav-bar-inicio>
+  </ng-template>
 
-    <ng-template [ngSwitchCase]="'/login'">
-        <app-nav-bar-login></app-nav-bar-login>
-    </ng-template>
+  <ng-template [ngSwitchCase]="'/inicio'">
+    <app-nav-bar-inicio></app-nav-bar-inicio>
+  </ng-template>
 
-    <ng-template [ngSwitchCase]="'/cadastro'">
-        <app-nav-bar-login></app-nav-bar-login>
-    </ng-template>
+  <!-- Nav Bar para as telas de login e cadastro -->
+  <ng-template [ngSwitchCase]="'/login'">
+    <app-nav-bar-login></app-nav-bar-login>
+  </ng-template>
 
-    <ng-template ngSwitchDefault>
-      <h1>TESTEEEEEEEE</h1>
-    </ng-template>
+  <ng-template [ngSwitchCase]="'/cadastro'">
+    <app-nav-bar-login></app-nav-bar-login>
+  </ng-template>
+
+  <!-- Nav Bar para o restante das telas -->
+  <ng-template ngSwitchDefault>
+    <h1>TESTEEEEEEEE</h1>
+  </ng-template>
 
 </ng-container>
 
