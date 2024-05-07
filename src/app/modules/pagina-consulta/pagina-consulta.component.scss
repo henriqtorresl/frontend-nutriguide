@@ -226,7 +226,7 @@ button {
 .nutricionistas {
     margin-top: 40px;
     padding: 10px;
-    background-color: #E6FBEA;
+    // background-color: #E6FBEA;
 }
 
 .nutricionistas-title {
@@ -278,6 +278,43 @@ button {
 
 .nutricionistas-image {
     display: none;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    background: url('../../../assets/img/folhas.gif') no-repeat center/100%;
+    background-color: #FDE9D2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        background-color: #FDE9D2;
+        width: 55%;
+    }
+
+    p {
+        text-align: center;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 5px dotted #96C697;
+        width: 80%;
+
+        span {
+            color: #A0D3C3;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+
+            &:hover {
+                color: #A0D3C3;
+            }
+        }
+    }
 }
 
 // Tablet
@@ -368,6 +405,20 @@ button {
         img {
             width: 50%;
             border-radius: 25px;
+        }
+    }
+
+    /* Footer */
+    .footer {
+        background: url('../../../assets/img/folhas.gif') center/50%;
+        background-color: #FDE9D2;
+
+        img {
+            width: 45%;
+        }
+
+        p {
+            width: 70%;
         }
     }
 
@@ -534,6 +585,20 @@ button {
         img {
             width: 40%;
             border-radius: 25px;
+        }
+    }
+
+    /* Footer */
+    .footer {
+        background: url('../../../assets/img/folhas.gif') center/50%;
+        background-color: #FDE9D2;
+
+        img {
+            width: 35%;
+        }
+
+        p {
+            width: 60%;
         }
     }
 }
@@ -752,6 +817,20 @@ button {
         img {
             width: 45%;
             border-radius: 25px;
+        }
+    }
+
+    /* Footer */
+    .footer {
+        background: url('../../../assets/img/folhas.gif') center/50%;
+        background-color: #FDE9D2;
+
+        img {
+            width: 25%;
+        }
+
+        p {
+            width: 50%;
         }
     }
 }
