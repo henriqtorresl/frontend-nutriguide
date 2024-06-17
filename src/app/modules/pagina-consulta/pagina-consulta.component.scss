@@ -10,6 +10,16 @@ button {
     }
 }
 
+/* Desabilitado */ 
+.disabled {
+    cursor: default !important;
+    background-color: #b9b9b9 !important;
+
+    &:hover {
+        background-color: #b9b9b9 !important;
+    }
+}
+
 /* Consultar Nutricionista */
 .consultar-nutri {
     width: 100%;
